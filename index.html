@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>SU Home Page</title>
+    <!--
+    CSS ==> Cascading Style Sheet
+    Check "CSS Zen Garden" to see how the same content can be rendered in different styles
+    3 ways/methods to apply/configure the styles
+    starting from the more specific to the general and more global ones:
+    - Inline Styles
+    - Embedded (Internal) Styles
+    - External Styles
+    - Imported Styles
+    External Styles:
+    All style rules will be written in an external file (not in the same HTML file)
+    this external file will have the extension of ".css",
+    this file must be connected/linked to our html file
+    Internal (Embedded) Styles:
+    All style rules will be written inside the <head> element of our html file
+    inside <style> and </style> tags
+    Inline Styles:
+    All style rules will be written as attributes for the html elements
+    Imported styles (Not used frequently):
+    Are similar to external styles for connecting with a separate file
+    that contains the CSS code.
+    This file can be imported into:
+    - embedded styles
+    - another external style sheet
+    by using @import directive
+    This extra one:
+    - Imported Styles => @import(.....) usually used with Google fonts
+    Review:
+    <element attribute="value">content</element>
+    HTML ==> <h1 id="test">Head Title<h1>
+    Selector {
+        Property: value; ==> Declaration
+    }
+    Using External Style Sheet:
+    the styles are inside a separate (external) file
+    since that file contains only CSS rules and NO HTML
+    the extension of that file will be .css and Not .html
+    Example:
+    styles.css or style.css or my-styles.css or abc-style.css
+    -->
+
+    <!--
+        Using External CSS:
+        -------------------
+        Add a link to an external CSS file named "css-intro.css" which is inside a sub-folder named "css"
+        to apply/use external css file in our html page => link element
+        we need to add:
+         - href="??? File name and location ??"
+         - rel="stylesheet"
+        NOTE:
+        In XHTML syntax, type attribute with the value of "text/css" is required.
+        - type="text/css"
+        It's an optional attribute with HTML5 (W3C validator will not complaint):
+        - type="text/css"
+        Notice by default VS code will generate: <link rel="stylesheet" href="">
+        We need to place this line in the head element of every HTML page
+    -->
+
+    <!--
+            We will use External Style Sheet File
+            The link must be inside <head> element
+            We used to add the attribute: 
+            type="text/css" ==> No need with HTML5
+    -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Internal Styles:
+         Warning:
+         The [type="text/css"] attribute for the <style> element is NOT needed
+         It should be omitted ==> type="text/css"
+         This is the way it used to be, but no more with HTML5
+         So W3C will give us this Warning Message if you use it: The type attribute for the style element is not needed and should be omitted.
+         -->
+    <style>
+        /* We put all our internal styles inside this <style> element that is inside <header> element */
+    </style>
+</head>
+
+<body>
+    <!-- the main container div of all the page contents -->
+    <div class="container">
+        <header>
+            <img src="assets/images/su_banner.gif" alt="Website Main Banner" title="Umbrella Website Banner" />
+            <nav id="main-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About Us</a>
+                    </li>
+                    <li>
+                        <a href="services.html">Our Services</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content">
+            <h2>Welcome to our amazing Spa</h2>
+            <p>Welcome to The Striped Umbrella — a full-service resort and spa just steps from the Gulf of Mexico and
+                ten miles
+                east of Crab Key, Florida. Come enjoy the best of both worlds, a secluded sandy beach populated with
+                beautiful
+                birds, yet a short drive down the road from world-class shopping, restaurants, and entertainment. Bring
+                a
+                good book and leave your laptop at the office. You won't want to go home.
+            </p>
+            <img class="img-centre" src="assets/images/pool.jpg" alt="spa Hotel" title="spa Pool" />
+            <br>
+            <video controls width="400" height="300" preload="auto" loop poster="assets/images/sea_spa_logo.jpg">
+                <source src="assets/media/w3schooldemo.mp4">
+                <source src="assets/media/w3schooldemo.WebM">
+                <source src="assets/media/w3schooldemo.ogg">
+                <p>This browser does not support our video format.</p>
+            </video>
+        </div>
+
+        <footer>
+            <footer>
+                <p>
+                    Copyright &copy; 2022 ILAC and EFREI Paris – HTML-CSS major lab-work - created by: Your Full Name -
+                    All rights reserved
+                </p>
+            </footer>
+        </footer>
+    </div>
+</body>
+
+</html>

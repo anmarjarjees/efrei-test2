@@ -1,0 +1,398 @@
+  /*
+            selector {
+                declaration ==> property: value;
+            }
+            Selector can be any element like p
+            Examples of selector:
+            could be ==> id, class, html element (p, h1, h2, ul, etc...)
+            These { and } are called "curly braces" or "curly brackets"
+            With coding/programming we use different types of brackets:
+            ( )	=> Round brackets or parentheses
+            [ ]	=> Square brackets or brackets
+            { }	=> Curly brackets or braces
+            ⟨ ⟩ => Angle brackets or chevrons
+*/
+
+
+  /* 
+Q#: All the elements have margin of 0 from the top, bottom, left, and right 
+
+HINTS:
+One Value => Top/Right/Bottom/Left
+margin: 0;
+
+Two Values => Top/Bottom | Left/Right 
+margin: 5% auto;
+
+Three Values => top | Left/Right | bottom
+margin: 5px auto 10px;
+
+Four Values => top | right | bottom | left
+margin: 2px 1em 0 auto;
+
+Link: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+
+NOTE: The same rules for padding 
+
+margin/padding are not inherited =>  Inherited no
+*/
+  * {
+    /*
+          declaration => background-color: blanchedalmond;
+          */
+    margin: 0;
+  }
+
+
+  /*
+All the HTML5 new elements (The new semantic elements) that you have used in your code 
+should be displayed as block-level elements 
+(for old browsers that don’t support them), 
+so make sure to follow/add the rule for that. (Please check my in-class notes/code) 
+*/
+  header,
+  section,
+  footer,
+  nav,
+  article,
+  figure,
+  figcaption {
+    display: block;
+  }
+
+
+  /*
+    Major Font Types:
+    Two major and main types that are frequently used in web development:
+    - Serif Fonts
+    - Sans-serif Fonts
+    VSC will give us many font options like (Adobe Dreamweaver) because if one font is not available, the browser will jump to the next one and so on We will have more topics about font later
+	You can read more about Fonts: https://www.w3schools.com/css/css_font.asp
+    Task: target/style the font family (face)
+    Task below: style the font family (face) with any sans-serif font family
+    */
+
+  body {
+    /* Any colour you prefer for the text: */
+    color: #666666;
+    background-color: #ffffff;
+    /* 
+    A background image, you can use any one from the 7 samples of dark-woodx.jpg
+    */
+    background-image: url("../assets/images/dark-wood.jpg");
+    /* 
+    The font family (face) is at least 3 options of any sans-serif fonts 
+    */
+    font-family: Arial, Helvetica, sans-serif;
+    /* Margin 0 for all the four sides (top, bottom, left, right) */
+    margin: 0px;
+  }
+
+  /* Style the <div> element with class "container" */
+  div.container {
+    width: 950px;
+    /* 5px for top/bottom and auto for left/right */
+    margin: 5px auto;
+    background-color: #fff5e6;
+  }
+
+  /*
+        Please refer to my pdf in-class notes for more information about "Specificity"
+        Starting with the More Specific (Selectors with Hight points)
+        Moving towards the Less Specific (Selectors with Less points)
+        Type	                                    Points
+        =====                                       ======
+        !important	                                10000
+        Inline Style (Style Attribute)	            1000
+        ID	                                        100
+        Class, pseudo-class	                        10
+        Every Element (div, p, ul, article, …)	    1
+        Universal Selector (*)	                    0
+        Stay tuned for using this table below :-)
+        And if you like, you can check this nice article of Chris Coyier:
+        https://css-tricks.com/specifics-on-css-specificity/
+*/
+
+  /*
+  Any HTML element=>1 point class=>10 points id=>100 points 
+  */
+  .container {
+    background-color: #e1e18b;
+  }
+
+
+  .content {
+    /* box-sizing: border-box; */
+    /*
+    - The line height (of the text) should be 1.4em 
+    - 10px padding to all the sides 
+    */
+    line-height: 1.4em;
+    padding: 10px;
+  }
+
+  /*
+Target header, nav, and footer
+*/
+  header,
+  nav,
+  footer {
+    background-color: #cc7a00;
+    color: #ffffff;
+    /* height: 160px; */
+    /* background-image: url("images/header.jpg"); */
+  }
+
+  /* 
+h1 {
+			text-indent: -9999px;
+			width: 940px;
+			height: 130px;
+			margin: 0px;
+		} 
+*/
+
+  /* ********** Descendant Selector *********** */
+  /*
+<ul> inside <nav> element 
+(styling only a ul child of any nav element):  
+*/
+  nav ul {
+    /* 
+	- 0 margin from all the sides  
+	- 5px padding from all the sides  
+	*/
+    margin: 0;
+    padding: 5px;
+  }
+
+  /*
+Style the list items <li> of the main navigation (nav)  
+- To be displayed horizontally (Remember that <li> is a block-level element) 
+- Adding margin of 40px to the right of each list item 
+- All the navigation items should be displayed as Uppercase 
+*/
+  nav li {
+    display: inline;
+    margin-right: 40px;
+    text-transform: uppercase;
+  }
+
+  /* 
+Styling the a elements inside the li of nav 
+- Pseudo Class: acts like an extra value for a class attribute
+We will work on these 4 main types of "Pseudo Class":
+    :link ==> the normal link inside <a> element (default style: blue color with underline)
+    :visited ==> the visited or the clicked links (After the user clicked the link)
+    :hover ==> when we hover the mouse over the link
+    :active ==> when we click the link (The moment when we click/hold the mouse button on the link)
+    To use them all, they should appear in the following sequence:
+    Link Visited Hover Active => LoVe HAte
+    NOTE:
+    - We can also add :focus to be used with the Keyboard TAB key for Accessibility
+    - We should add it between LoVe and HAte:
+    :link
+    :visited
+    :focus
+    :hover
+    :active
+
+LoVe HAte
+
+We can write them all individually
+:link
+:visited
+:hover
+:active
+
+Most Developer combine every two  together for simplicity
+- link and visited (go together)
+- hover and active (go together)
+*/
+  nav li a:link,
+  nav li a:visited {
+    color: #ffffff;
+  }
+
+  nav li a:hover,
+  nav li a:active,
+  nav li a.current {
+    color: #000000;
+  }
+
+  a {
+    color: #de6581;
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin: 10px;
+    text-transform: uppercase;
+    color: darkred;
+  }
+
+  /*
+1. change the border color to be brown:
+border-color: brown;
+
+ NOTE:
+ if we just type the property "color"
+ we will not see any changes because color property will only
+ affect the text:
+ color: blue; ==> useless for <hr> element because <hr> element CANNOT
+ contain text inside!
+ color: blue; ==> for <p>, <h1>, <ul>, <body>
+ 
+
+2. change the border width (thickness) 
+border-width: 3px;
+
+
+3. change the border style:
+	 - dashed
+	 - dotted
+	 - double
+	 - groove
+	 - inset
+	 - outset
+	 - ridge
+	 - solid
+	 - none
+
+  border-style: dashed;
+
+
+ instead of typing 3 lines of css:
+ border-color: red;
+ border-width: 3px;
+ border-style: dashed;
+
+ we can just use the shortcut/shorthand way:
+ border: width color style;
+ border: 3px red dashed;
+ in css, we can use this shorthand property named "border":
+
+border: 3px brown dashed;
+*/
+  .img-centre {
+    display: block;
+    margin: 5px auto;
+    border: 2px solid black;
+    padding: 2px;
+  }
+
+  audio,
+  video {
+    display: block;
+    margin: 10px auto;
+  }
+
+  table {
+    /*
+            style the table to have width of 800px 
+        */
+    width: 800px;
+    margin: 10px auto;
+    border-spacing: 10px;
+    /*
+            border-collapse: collapse will override the border-spacing 
+            this rule will ignore all the spaces in between the cells             
+            So if use ==> border-collapse: collapse;
+            we should not use ==> border-spacing: 10px;
+            because it will useless 
+            unless if use ==> border-collapse: show;     
+            notice that show is the default option,
+            so you don't to write ==>  border-collapse: collapse;       
+    */
+
+    /* border-collapse */
+    border-collapse: collapse;
+  }
+
+  /* styling the <th> <td> */
+  table td,
+  table th {
+    border: 1px groove black;
+    /*
+        it's good idea (looks better) to add or to have a space within each cell.
+        padding: space between the text (cell's content) and the cell border
+        for all the table cells:
+    */
+    padding: 2px 5px;
+    background-color: #f4dab7;
+  }
+
+  table th,
+  tfoot td {
+    text-transform: uppercase;
+    background-color: #b58c56;
+    color: #f4dab7;
+  }
+
+  dt {
+    font-weight: bold;
+  }
+
+  /* 
+        we can also style the empty cells (if we have) to make them:
+        - visible ==> show (the default) 
+        - invisible ==> hide (to hide them)
+*/
+
+  /* don't forget to add the following rule to the previous one (the same selector td) */
+  td {
+    empty-cells: hide;
+    /*
+            Notice that the changes will not be obvious 
+            if you have the value of border-collapse
+            equal to "collapse"
+            you will see the changes between hide and show
+            if you change the value of border-collapse to separate
+    */
+  }
+
+  footer {
+    font-size: 80%;
+    text-align: center;
+    padding: 1px 0;
+  }
+
+  iframe {
+    display: block;
+    margin: 10px auto;
+  }
+
+  fieldset {
+    width: 500px;
+    margin: 20px auto;
+    border: 1px solid #b58c56;
+    background-color: #f4dab7;
+  }
+
+  legend {
+    font-style: italic;
+    color: #f4dab7;
+    margin: 0 10px;
+    padding: 0 5px;
+    background-color: #b58c56;
+    border-radius: 10px;
+  }
+
+  /* 
+  Targeting/styling any input element that has an attribute "type" 
+  with the value of "submit"
+  */
+  input[type="submit"] {
+    border: 1px solid #f4dab7;
+    padding: 5px;
+    background-color: #b58c56;
+    color: #ffffff;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #724311;
+    color: #ffffff;
+    cursor: pointer;
+  }
